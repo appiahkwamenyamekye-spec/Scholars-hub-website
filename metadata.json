@@ -1,0 +1,6 @@
+{
+  "name": "ScholarHub",
+  "description": "Discover, share, and collaborate on academic research papers, theses, assignments, and study materials on an elegant, secure platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
