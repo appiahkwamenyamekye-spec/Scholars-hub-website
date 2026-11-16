@@ -52,7 +52,18 @@ export const UploadPage: React.FC<UploadPageProps> = ({ onSuccess, onNavigate })
   const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
-    api.getCategories().then(setCategories).catch(() => {});
+    useEffect(() => {
+  api.getCategories()
+    .then((data) => {
+      console.log('CATEGORIES:', data);
+      setCategories(data);
+    })
+    .catch((error) => {
+      console.error('CATEGORY ERROR:', error);
+    });
+
+  api.getInstitutions().then(setInstitutions).catch(console.error);
+}, []);
     api.getInstitutions().then(setInstitutions).catch(() => {});
   }, []);
 
