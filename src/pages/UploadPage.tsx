@@ -50,18 +50,9 @@ export const UploadPage: React.FC<UploadPageProps> = ({ onSuccess, onNavigate })
   const [error, setError] = useState('');
   const [uploadedWork, setUploadedWork] = useState<AcademicWork | null>(null);
   const [successMessage, setSuccessMessage] = useState('');
-
-  useEffect(() => {
-    useEffect(() => {
-  api.getCategories()
-    .then((data) => {
-      console.log('CATEGORIES:', data);
-      setCategories(data);
-    })
-    .catch((error) => {
-      console.error('CATEGORY ERROR:', error);
-    });
-
+  
+useEffect(() => {
+  api.getCategories().then(setCategories).catch(() => {});
   api.getInstitutions().then(setInstitutions).catch(console.error);
 }, []);
     api.getInstitutions().then(setInstitutions).catch(() => {});
